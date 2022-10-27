@@ -1,31 +1,29 @@
+  class Usuario{
+    constructor(nombre,apellido){
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.libro = [];
+      this.mascota = [];
+    }
+    getNombrecompleto(){
+      console.log(`${this.nombre} ${this.apellido}`)
+    }
+    agregarMascota(mascota){
+      this.mascota.push(mascota)
+    }
+    agregarLibro(libro, autor){
+      this.libro.push({libro, autor})
+    }
+    getNombreLibro(){
+      console.log(this.libro.map((e) => e.libro))
+    }
+  }
+const usuario = new Usuario('Matias', 'Perez')
+ usuario.getNombrecompleto()
 
-class Otra{
-    despedida() {
-      console.log('Hasta luego')
-    }
-  }
-  
-  class Usuario extends Otra{
-    constructor(nombre, getBooks, animales) {
-      super()
-      this.nombre = nombre
-      this.getBooks = getBooks
-      this.animales = animales
-    }
-    static saludar() { console.log('Hola Ususario') }
-  
-    mostrarNombre() {
-      console.log(this.nombre)
-      this.#mostrarAnimales()
-    }
-  
-    #mostrarAnimales() {
-      console.log(this.animales)
-    }
-  }
-  Usuario.saludar()
-  const cliente = new Usuario('Matias', 'La virgen en sus ojos', 'gato')
-  console.log(cliente, typeof cliente)
-  cliente.mostrarNombre()
-  
+ usuario.agregarMascota('perro');
+ 
+ usuario.agregarLibro('La virgen en sus ojos', 'Florencia Etcheves');
+ usuario.agregarLibro('Cien años de soledad', 'Gabriel García Marquez');
+ usuario.getNombreLibro();
 
